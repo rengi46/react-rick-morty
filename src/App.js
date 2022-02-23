@@ -1,13 +1,19 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import { Switch, Route} from "react-router-dom";
+import HomeContextPage, { HomeContext } from "./context/HomeContext";
+import Home from "./pages/Home/Home";
+import Episode from "./pages/Episode/Episode";
 
 function App() {
-  
   return (
-  <Routes>
-    <Route path="/" element={<Home /> }
-  </Routes> )
+    <HomeContextPage>
+  <Switch>
+      <Route path="/">
+        <Home/>
+      </Route>
+  </Switch>
+  </HomeContextPage>
+   )
 }
 
 export default App;
